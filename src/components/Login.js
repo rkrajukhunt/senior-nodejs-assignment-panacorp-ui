@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Login extends Component {
     render(){
-        console.log('props : ', this.props);
+        if(!(this.props.user && (this.props.user.userName || this.props.user.userName === ''))) return null;
         const { changePassword, changeUserName, } = this.props;
         const { userName, password, } = this.props.user;
         return (

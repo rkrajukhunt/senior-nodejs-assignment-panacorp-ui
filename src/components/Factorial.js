@@ -21,14 +21,12 @@ export default class Factorial extends Component {
 
     async getFactorial(){
         let result = await factorialService(this.state.number);
-        console.log('got result : ', result);
         this.setState({
             factorial: result
         })
     }
 
     render(){
-        console.log('props : ', this.props);
         return (
             <div className="authentication-bg">
                 <div className="account-pages">

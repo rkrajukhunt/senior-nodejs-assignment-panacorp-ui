@@ -16,7 +16,6 @@ function App() {
   const isAuthed = user && user._id;
 
   function changeUserName(e){
-    console.log('change uname');
     setUser({
       ...user,
       userName: e.target.value,
@@ -36,11 +35,10 @@ function App() {
         ...user,
       })
       setUser(result);
-      toast.success('Logged in successfully')
-      console.log('got result : ', result);
+      toast.success('Logged in successfully');
     }
     catch(err){
-      console.log(err);
+      toast.error('Could not log in!!');
     }
   }
 
@@ -53,11 +51,10 @@ function App() {
         userName: '',
         password: '',
       });
-      toast.success('Registered successfully')
-      console.log('got result : ', result);
+      toast.success('Registered successfully');
     }
     catch(err){
-      console.log(err);
+      toast.error('Could not sign up!!');
     }
   }
 
